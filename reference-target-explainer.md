@@ -57,7 +57,7 @@ Reference Target is a new feature that enables creating ARIA links to elements i
 
 - This is scoped to only solve the problem of referring _into_ the shadow DOM. It relies on ARIAMixin to refer _out_ of the shadow DOM.
 - This feature does not solve the [bottleneck effect](https://alice.pages.igalia.com/blog/how-shadow-dom-and-accessibility-are-in-conflict/#limitations-of-these-apis). It is difficult to find a compelling real-world example where this is a problem.
-- This does not affect the how attributes set on the host element work. For example, this does not tackle the problem of forwarding `role` or `aria-label`, etc. from the host element to an element inside.
+- This does not affect how attributes set on the host element work. For example, this does not tackle the problem of forwarding `role` or `aria-label`, etc. from the host element to an element inside.
 
 #### Phases
 
@@ -84,7 +84,7 @@ JavaScript example:
       constructor() {
         super();
         this.shadowRoot_ = this.attachShadow({ mode: "closed" });
-        this.shadowRoot_.innerHTML = `<input id="real-input" />`;
+        this.shadowRoot_.innerHTML = `<input id="real-input">`;
         this.shadowRoot_.referenceTarget = "real-input";
       }
     }
@@ -104,7 +104,7 @@ Equivalent with declarative shadow DOM:
     shadowrootmode="closed"
     shadowrootreferencetarget="real-input"
   >
-    <input id="real-input" />
+    <input id="real-input">
   </template>
 </fancy-input>
 ```
@@ -525,7 +525,7 @@ customElements.define(
     constructor() {
       super();
       this.shadowRoot_ = this.attachShadow({ mode: "closed" });
-      this.shadowRoot_.innerHTML = `<input id="real-input" />`;
+      this.shadowRoot_.innerHTML = `<input id="real-input">`;
       this.shadowRoot_.referenceTarget = "real-input"; // (1)
       this.input_ = this.shadowRoot_.getElementById("real-input");
     }

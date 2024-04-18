@@ -1,3 +1,6 @@
+> [!CAUTION]  
+> The Export ID proposal is no longer planned. It has been replaced by the [Reference Target](reference-target-explainer.md) proposal.
+
 # Exporting IDs from shadow roots for cross-root ARIA
 
 Authors: [Ben Howell](https://github.com/behowell), [Alice Boxhall](https://github.com/alice)

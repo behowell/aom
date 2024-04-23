@@ -33,9 +33,9 @@ Web components have an increasing number of features that allow them to work and
 
 However, there are still missing pieces that prevent a web component from truly being a drop-in replacement for a built-in, including:
 
-1. Can't create ID reference links to elements inside the shadow DOM.
-2. Can't use built-in attributes like `aria-label` or `role` on the host and have them apply to an element inside the shadow DOM.
-3. Non-trivial amount of code required to hook up custom attributes on the host to ARIAMixin attributes on an element inside the shadow DOM.
+1. Can't create ID reference links to elements inside a [shadow tree](https://dom.spec.whatwg.org/#shadow-trees).
+2. Can't use built-in attributes like `aria-label` or `role` on the host and have them apply to an element inside the shadow root.
+3. Non-trivial amount of code required to hook up custom attributes on the host to ARIAMixin attributes on an element inside the shadow root.
 4. Can't get form-association for "free" by delegating to an input inside.
 
 This proposal solves only the first problem: referring into the shadow DOM. It leaves the other problems to be solved by other features. While all of the problems may seem related, they can be designed separately.
@@ -66,7 +66,7 @@ This proposal is broken into two phases:
 - [Phase 1](#phase-1) adds the ability to designate a single element as the target for _all_ IDREF properties that refer to the host.
 - [Phase 2](#phase-2) adds a way to re-target specific properties (like `aria-activedescendant`) to refer a separate element.
 
-The goal of breaking it into phases is to get the simpler and less controversial ideas working first. The solutions to Phase 2 are more complex and may need more discussion before they are ready.
+The goal of breaking it into phases is to get the simpler syntax and simpler use cases working first. The solutions to Phase 2 are more complex and may need more discussion before they are ready.
 
 ### <a id="phase-1"></a> Phase 1: ShadowRoot `referenceTarget` attribute
 

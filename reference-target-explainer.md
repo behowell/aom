@@ -127,6 +127,7 @@ This feature is intended to work with **all** attributes that refer to another e
   - `form`
   - `list`
   - `popovertarget`
+  - `anchor` (proposed in the [Popover API Explainer](https://open-ui.org/components/popover.research.explainer/#anchoring))
   - `invoketarget` (proposed in [Invokers Explainer](https://open-ui.org/components/invokers.explainer/))
   - `interesttarget` (proposed in [Invokers Explainer](https://open-ui.org/components/invokers.explainer/))
 - Tables
@@ -478,6 +479,7 @@ It would be possible to use exported IDs instead of `referenceTargetMap` if/when
 #### Cons
 
 - Exposes some of the internal details of a control and does not give a way for the control to encapsulate those details.
+  - This may not be a dealbreaker: the [`::part()`](https://drafts.csswg.org/css-shadow-parts/#part) CSS selector also has a similar drawback for CSS styles, but it still is a standard and a useful feature for styles.
 - Incompatible with ARIAMixin attributes, which don't allow directly referencing elements inside other shadow trees.
   - It may be possible to work around this limitation, but it would require a change to the behavior of the ARIAMixin attributes, as well as new JavaScript APIs to resolve an IDREF like `"fancy-input::id(real-input)"` into an "ElementHandle" type object that references the element without giving full access to it (which would break shadow DOM encapsulation).
 

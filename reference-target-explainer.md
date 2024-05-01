@@ -1,4 +1,4 @@
-# Reference Target for Cross-root ARIA
+# Reference Target for Cross-Root ARIA
 
 Author: [Ben Howell](https://github.com/behowell)
 
@@ -10,7 +10,7 @@ This proposal is based on [@Westbrook](https://github.com/Westbrook)'s [Cross-ro
 
 ## Background
 
-### Cross-root ARIA
+### Cross-Root ARIA
 
 For an in-depth description the cross-root ARIA problem, see [@alice](https://github.com/alice)'s article [How Shadow DOM and accessibility are in conflict](https://alice.pages.igalia.com/blog/how-shadow-dom-and-accessibility-are-in-conflict/). The article describes the two main problems that need to be solved: 
 
